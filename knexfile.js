@@ -1,5 +1,6 @@
 // Update with your config settings.
 
+const path = require("path");
 require("dotenv").config();
 const { DATABASE_URL } = process.env;
 
@@ -22,8 +23,8 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: path.join(__dirname, "src", "db", "migrations"),
+    },
   },
 
   production: {
